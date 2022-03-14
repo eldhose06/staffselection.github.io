@@ -1,0 +1,841 @@
+
+<script
+src="js/jquery.js"
+></script>
+<script
+src="js/mock_api.js"
+></script>
+<link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="bootstrap.min.js"></script>
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styleh.css">
+    <link rel="stylesheet" href="stylep.css">
+    <!-- <link rel="stylesheet" href="breadcrumb.css"> -->
+    <!-- <link rel="stylesheet" href="stylea.css"> -->
+    </head>
+      
+    <body>
+        
+        
+         
+        <!-- <div class="row" style="padding-top: 25px;"> -->
+          <marquee bgcolor="#10508a" behaviour="alternate"><b><font color="white"> Rank List will be published in the website!</font></b></marquee>
+
+          <div class="headimage">
+          <img src = "logomacAdmission.jpg" alt = "Mar AThanasius College" align="" height = "50" width = "1515"/>
+       <!-- <h4 align="right"><b> MAR &nbsp ATHANASIUS &nbsp COLLEGE</b> <br>(Autonomous)<br>Kothamangalam, Kerala. </h4>  -->
+          </div>
+
+          <img src = "Link_100044.png"
+          alt = "Mar AThanasius College" height = "170" width = "1514" /> 
+
+
+
+            <div class="testbox">
+              <div class="btn-group btn-breadcrumb" style="width: 100%; padding-top: 25px; display: flex;justify-content: space-around;">
+                <a href="#" class="btn btn-primary breadbutton button-box1" data-breadindex="1">Personal Details</a>
+                <a href="#" class="btn btn-primary breadbutton button-box2" data-breadindex="2">Academic Details</a>
+                <a href="" class="btn btn-primary breadbutton button-box3" data-breadindex="3" disabled>Payment Section</a>
+            </div>
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
+        <form>
+        <div class="container">
+        <div class="testbox personal-div box1" style="display:block;">
+           
+              <div class="banner">
+                <h1>UG ADMISSION FORM</h1>
+              </div>
+      
+              <fieldset>
+              <legend>
+                 <p> <h3>Personal Details</h3></p>
+                </legend>
+                
+                <div class="itemreq">
+                 <label><b align="right"></b><span>* required</span></label>
+                </div>
+
+              <div class="colums">
+                <div class="item">
+                  <label for="name">Name Of Candidate&nbsp;<span>*</span></label>
+                  <input id="name" type="text" name="name" required/>
+                </div>
+      
+                <div class="item">
+                  <label for="dateofbirth">Date Of Birth&nbsp;<span>*</span></label>
+                  <input id="dateofbirth" type="date" name="dateofbirth" required/>
+                </div>
+      
+                <div class="item">
+                  <label>Gender&nbsp;<span>*</span></label>
+                  <select name="gender" id="gender">
+                    <option selected value="" disabled selected>- Select Gender -</option>
+                    <option value="male" >Male</option>
+                    <option value="female">Female</option>
+                    <option value="transgender">transgender</option>
+                  </select>
+                </div>
+      
+                <div class="item">
+                  <label>Blood Group</label><br>
+                  <select name="blood" id="blood">
+                    <option selected value="" disabled selected>- Select Group -</option>
+                    <option value="A+" >A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-" >B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+" >AB+</option>
+                  </select>
+                </div>
+      
+                <div class="item">
+                  <label for="nationality">Nationality&nbsp;<span>*</span></label>
+                  <select id="nationality" class="form-control" type="text" name="nationality" required> 
+
+                  </select>
+                </div>
+      
+                <div class="item">
+                  <label>Religion&nbsp;<span>*</span></label>
+                  <select name="religion" id="religion" required>
+            
+                  </select>
+                </div>
+      
+                <div class="item">
+                  <label>Caste&nbsp;<span>*</span></label>
+                  <select name="caste" id="caste" required>
+                    <option selected value="" disabled selected>- Choose Religion first -</option>
+                  </select>
+                </div>
+      
+                <div class="item">
+                  <label for="pob">Place Of Birth&nbsp;<span>*</span></label>
+                  <input id="pob" type="text" name="pob" required/>
+                </div>
+      
+                <div class="item">
+                  <label>Seat Reservation Cateqory&nbsp;<span>*</span></label>
+                  <select name="reservation" id="reservation" required>
+                    <option selected value="" disabled selected>- Select Cateqory -</option>
+                    <option value="general" >General</option>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                  </select>
+                </div>
+      
+                <div class="question">
+                  <label for="handicapped">Whether Physically Handicapped ?&nbsp;<span>*</span></label>
+                  <input id="handicapped" type="radio" name="handicapped" required/>
+                  <div class="question-answer">
+                    <div>
+                      <input type="radio" value="none" id="radio_1" name="handicapped"/>
+                      <label for="radio_1" class="radio"><span>Yes</span></label>
+                      <input  type="radio" value="none" id="radio_2" name="handicapped"/>
+                      <label for="radio_2" class="radio"><span>No</span></label>
+                    </div>
+                  </div>
+                </div>
+      
+               <div class="item">
+                  <label for="email">Email ID&nbsp;<span>*</span></label>
+                  <input id="email" type="email" name="email" required/>
+                </div>
+      
+                <div class="item">
+                  <label for="phone">Phone NO&nbsp;<span>*</span></label>
+                  <input id="phone" type="tel"  maxlength="10"  name="phone" required/>
+                </div>
+      
+                <div class="item">
+                  <label for="adhaar">Adhaar NO&nbsp;<span>*</span></label>
+                  <input id="adhaar" type="number" maxlength="12" name="adhaar" required/>
+                </div>
+              </div>
+              </fieldset>
+            
+      
+                <fieldset>
+                <legend>
+                 <p> <h3>Communication Address</h3></p>
+                </legend>
+                
+                <div>
+                    <h4> Home Address</h4>
+                </div>
+      
+      
+                <div class="colums">  
+      
+                 
+                 
+                 
+                  
+                  <div class="item">
+                    <label for="caddress1">House Name / No&nbsp;<span>*</span></label>
+                    <input id="caddress1" type="text" name="c_house" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="caddress2">Locality / City&nbsp;<span>*</span></label>
+                    <input id="caddress2" type="text" name="c_city" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="caddress3">Post Office&nbsp;<span>*</span></label>
+                    <input id="caddress3" type="text" name="c_postoff" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="caddress4">District&nbsp;<span>*</span></label>
+                    <input id="caddress4" type="text" name="c_district" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="caddress5">State&nbsp;<span>*</span></label>
+                    <input id="caddress5" type="text" name="c_state" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="caddress6">ZIP Code&nbsp;<span>*</span></label>
+                    <input id="caddress6" type="text" name="c_zipcode" required/>
+                  </div>
+                </div>
+                  
+                  <br>
+                <div>
+                  <input style="width: auto;" type="checkbox"  id="checkaddress" name="checkaddress" onclick="address_check(this.form)">
+                  <!-- <b>(Check this box if Current Address & <br>  Permanent Address are the same) </b> -->
+                  <label  for="checkaddress" class="checkbox"><b>(Check this box if Current Address & <br>  Permanent Address are the same) </b></label>
+                </div>
+                
+                 
+                
+                <div>
+                  <h4> Permanent Address</h4>
+                </div>
+                   
+                <div class="colums">
+                   <div class="item">
+                   <label for="paddress1">House Name / No&nbsp;<span>*</span></label>
+                   <input id="paddress1" type="text" name="p_house" required/>
+                 </div>
+      
+                 <div class="item">
+                   <label for="paddress2">Locality / City&nbsp;<span>*</span></label>
+                   <input id="paddress2" type="text" name="p_city" required/>
+                 </div>
+      
+                 <div class="item">
+                   <label for="paddress3">Post Office&nbsp;<span>*</span></label>
+                   <input id="paddress3" type="text" name="p_postoff" required/>
+                 </div>
+      
+                 <div class="item">
+                   <label for="paddress4">District&nbsp;<span>*</span></label>
+                   <input id="paddress4" type="text" name="p_district" required/>
+                 </div>
+      
+                 <div class="item">
+                   <label for="paddress5">State&nbsp;<span>*</span></label>
+                   <input id="paddress5" type="text" name="p_state" required/>
+                 </div>
+      
+                 <div class="item">
+                   <label for="paddress6">ZIP Code&nbsp;<span>*</span></label>
+                   <input id="paddress6" type="text" name="p_zipcode" required/>
+                 </div>
+      
+      
+      
+                </div>
+                </fieldset>
+      
+      
+                  <fieldset>
+                  <legend>
+                   <p> <h3>Parent Details</h3></p>
+                  </legend>
+                  
+                  <div class="colums"> 
+      
+                  <div class="item">
+                    <label for="fname">Name Of Father&nbsp;<span>*</span></label>
+                    <input id="fname" type="text" name="fname" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="mname">Name Of Mother&nbsp;<span>*</span></label>
+                    <input id="mname" type="text" name="mname" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="foname">Occupation of Father</label>
+                    <input id="foname" type="text" name="foname"/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="moname">Occupation of Mother</label>
+                    <input id="moname" type="text" name="moname" />
+                  </div>
+      
+                  <div class="item">
+                    <label for="pphone">Parent Phone NO&nbsp;<span>*</span></label>
+                    <input id="pphone" type="tel" maxlength="10" name="phone" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="pemail">Parent Email ID</label>
+                    <input id="pemail" type="email" name="pemail" />
+                  </div>
+        
+                  <div class="item">
+                    <label for="gname">Guardian Name</label>
+                    <input id="gname" type="text" name="gname" />
+                  </div>
+                  
+                  <div class="item">
+                    <label for="grelation">Relationship with Guardian</label>
+                    <input id="grelation" type="text" name="grelation" />
+                  </div>
+      
+                  <div class="item">
+                    <label for="income">Annual Family Income</label>
+                    <input id="income" type="number" name="income" />
+                  </div>
+      
+                  </div>
+                </fieldset>
+      
+      
+                
+                <fieldset>
+                <legend>
+                <p><h3>Photo and Signature</h3></p>
+                 </legend>
+
+                 <div class="colums">
+                   
+                   <div class="item">
+                  <b>Photo of the candidate&nbsp;</b><span>*</span>
+                  <input type="file" id="file_candidate_photo"
+                       class="file" required />
+                       <img style="width: 250px;" id = "photo_preview">
+                   </div>
+                
+                  <!-- Image preview -->
+                  <div id="imagePreview"></div>
+
+                  <div class="item">
+                    <b>Signature of the candidate&nbsp;</b><span>*</span>
+                    <input type="file" id="file_candidate_signature"
+                         class="file" required />
+                         <img style="width: 250px;" id = "signature_preview">
+                     </div>
+
+                   <!-- signature preview -->
+                  <div id="imagePreview"></div>
+
+                 <!--<b>Photo Of the Candidate<span>*</span><h5>( Photo must be taken within last 6 months.<br> Size must be less than 30KB )</h5></b>
+                 <p><input type="file"  accept="image/*" name="image" id="file"  onchange="uploadPhoto(event)" style="display: none;"></p>
+                 <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                 <p><img id="output"   /></p>-->
+                
+                </div>
+                 
+                 <!-- <div class="colums">
+
+                    <b>Photo Of the Candidate <br><h5>( Photo must be taken within last 6 months.<br> Size must be less than 30KB )</h5></b>
+                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                    <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                    <p><img id="output" width="200" /></p>
+      
+                  <div class="image">
+                  <b> Photo Of the Candidate </b> <br>( Photo must be taken within last 6 months.<br> Size must be less than 30KB )
+                  <input type="file"  accept="image/*" name="image" id="file"  onchange="uploadPhoto(event)" style="display: none;" required>
+                  <label for="file" style="cursor: pointer;">Upload Image</label>
+                  <img id="output" > 
+                  </div> -->
+                
+                </fieldset>
+                
+                
+                
+              
+              
+              
+              
+              
+              
+              <div class="btn-block">
+                <button type="button" href="#" class="next next-button-box1" data-indexid="1">Save & Continue</button>
+              </div>
+      
+            
+          </div>
+        <div class="testbox admission-div box2" style="display: none;">
+             
+              <div class="banner">
+                <h1>UG ADMISSION FORM</h1>
+              </div>
+      
+              <fieldset>
+              <legend>
+                 <p> <h3>Accademic Details</h3></p>
+                </legend>
+
+                <div class="itemreq">
+                  <label><b align="right"></b><span>* required</span></label>
+                 </div>
+      
+                <div class="colums">
+
+                  <div class="item">
+                    <label for="sslcname">Name of institution (SSLC)&nbsp;<span>*</span></label>
+                    <input id="sslcname" type="text" name="sslcname" required/>
+                  </div>
+      
+                  <div class="item">
+                    <label for="sslcregno">Register number of SSLC&nbsp;<span>*</span></label>
+                    <input id="sslcregno" type="text" name="sslcregno" required/>
+                  </div>
+
+                  <div class="item">
+                    <label for="plustwoname">Name Of institution (Plus Two)&nbsp;<span>*</span></label>
+                    <input id="plustwoname" type="text" name="plustwoname" required/>
+                  </div>
+
+                  <div class="item">
+                    <label for="plustworegno">Register number of PLUS TWO&nbsp;<span>*</span></label>
+                    <input id="plustworegno" type="text" name="plustworegno" required/>
+                  </div>
+                 
+                  <div class="item">
+                    <label for="plustwoyear">Year of passing (PLUS TWO)&nbsp;<span>*</span></label>
+                    <input id="plustwoyear" type="text" name="plustwoyear" required/>
+                  </div>
+                  
+                  <div class="item">
+                    <label for="plustwoappearance">Number of appearance in Class XII&nbsp;<span>*</span></label>
+                    <input id="plustwoappearance" type="number" name="plustwoappearance" required/>
+                  </div>
+
+                  <div class="item">
+                    <label for="otherqualif">Any Other educational qualification (if applicable)</label>
+                    <input id="otherqualify" type="text" name="otherqualify" />
+                  </div>
+      
+                  <br>
+                 <!--
+                <div>
+                  <label>Weightage / Quota</label><br>
+                  
+                   <div>
+                      <input  type="checkbox" value="none" id="quota1" name="ncc"/>
+                      <label for="quota2" class="checkbox"><span>NCC</span></label>
+                    </div>
+                    <div>
+                      
+                      <input type="checkbox" value="none" id="quota2" name="nss"/>
+                      <label for="quota2" class="checkbox"><span>NSS</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota3" name="jawan"/>
+                      <label for="quota3" class="checkbox"><span>EX-SERVICE MEN / JAWAN</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota4" name="lakshadweep"/>
+                      <label for="quota4" class="checkbox"><span>LAKHSADWEEP</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota5" name="jammu"/>
+                      <label for="quota5" class="checkbox"><span>JAMMU & KASHMIR</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota6" name="differently"/>
+                      <label for="quota6" class="checkbox"><span>DIFFERENTLY ABLED</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota7" name="sports"/>
+                      <label for="quota7" class="checkbox"><span>SPORTS - UG</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota8" name="arts"/>
+                      <label for="quota8" class="checkbox"><span>ARTS - UG</span></label>
+                    </div>
+                    <div>
+                      <input type="checkbox" value="none" id="quota9" name="transgender"/>
+                      <label for="quota9" class="checkbox"><span>TRANSGENDER</span></label>
+                    </div>
+                  </div>-->
+      
+<div>
+  <b>Weightage/Quota</b>
+<label class="containercheck" for="quota1">NCC
+<input type="checkbox" id="quota1" name="ncc" onclick="myFunction1()">
+<span class="checkmark"></span>
+</label>
+<p id="file" style="display:none">Upload Certificate</p>
+
+<label class="containercheck" for="quota2">NSS
+  <input type="checkbox" id="quota2" name="nss" onclick="myFunction2()">
+  <span class="checkmark"></span>
+  </label>
+  <p id="file" style="display:none">Upload Certificate</p>
+
+  <label class="containercheck" for="quota3">JAWAN
+    <input type="checkbox" id="quota3" name="jawan">
+    <span class="checkmark"></span>
+    </label> 
+
+    <label class="containercheck" for="quota4">Lakshadweep
+      <input type="checkbox" id="quota4" name="lakshadweep" onclick="myFunction4()">
+      <span class="checkmark"></span>
+      </label>
+      <p id="file" style="display:none">Upload Certificate</p>
+
+</div>
+
+
+<!--
+
+<label class="containercheck">NSS
+  <input type="checkbox" id="quota2" name="nss">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Jawan
+  <input type="checkbox" id="quota3" name="jawan">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">lakshadweep
+  <input type="checkbox" id="quota4" name="lakshadweep">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Jammu & Kashmir
+  <input type="checkbox"id="quota5" name="jammu">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Differently Abled
+  <input type="checkbox" id="quota6" name="differentlyabled">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Sports
+  <input type="checkbox" id="quota7" name="sports">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Arts - UG
+  <input type="checkbox" id="quota8" name="arts">
+  <span class="checkmark"></span>
+</label>
+<label class="containercheck">Transgender
+  <input type="checkbox" id="quota9" name="transgender">
+  <span class="checkmark"></span>
+</label>
+</div>-->
+                
+
+                </div>
+                </fieldset>
+      
+      
+                <fieldset>
+                  <legend>
+                     <p> <h3>Programme Preference</h3></p>
+                    </legend>
+          
+                    <div class="colums">
+                      
+                      <div class="item">
+                        <label>Higher Secondary School Examination&nbsp;<span>*</span></label>
+                        <select name="hssexam" id="hssexam" required>
+                          <option selected value="" disabled selected>- Select -</option>
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+                      <div class="item">
+                        <label>Higher Secondary School Stream&nbsp;<span>*</span></label>
+                        <select name="hssstream" id="hssstream" required>
+                          <option selected value="" disabled selected>- Select Stream -</option>
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+                      <div class="item">
+                        <label>First Choice&nbsp;<span>*</span></label>
+                        <select name="firstchoice" id="firstchoice" required>
+                          <option selected value="" disabled selected>- Select Choice One -</option>
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+                      <div class="item">
+                        <label>Second Choice&nbsp;<span>*</span></label>
+                        <select name="secondchoice" id="secondchoice" required>
+                          <option selected value="" disabled selected>- Select Choice Two -</option>
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+                      <div class="item">
+                        <label>Third Choice&nbsp;<span>*</span></label>
+                        <select name="thirdchoice" id="thirdchoice">
+                          <option selected value="" disabled selected>- Select Choice Three -</option>  
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+                      <div class="item">
+                        <label>Fourth Choice&nbsp;<span>*</span></label>
+                        <select name="fourthchoice" id="fourthchoice" >
+                          <option selected value="" disabled selected>- Select Choice Four -</option>
+                          <option value="1" >1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+      
+              </div>
+                </fieldset>
+      
+                <div class="btn-block">
+                    <button type="button" href="#" class="prev prev-button-box2" data-indexid="2">Previous</button>
+                  <button type="submit" href="#" class="next next-button-box2" data-indexid="2">SUBMIT</button>
+                </div>
+      
+           
+          </div>
+
+
+
+    </div>
+  </form>
+    </body>
+    <script>
+      $(document).ready(function(){
+        activateBreadcrumb(1);
+        localStorage.setItem('current_page_index',1);
+        /*Nationality*/
+        let nationalityData = getNationality();
+        let nhtml = '';
+        nhtml += '<option value="0">Select Option</option>';
+        $.each(nationalityData, function(i,e) {
+          nhtml += '<option value="'+e.id+'">'+e.nationality+'</option>';
+        });
+        $('#nationality').html(nhtml);
+        /*Nationality*/
+
+        /*Religion*/
+        
+        let religionData = getReligions();
+        let rhtml = '';
+        rhtml += '<option value="0">Select Option</option>';
+        $.each(religionData, function(i,e) {
+          rhtml += '<option value="'+e.id+'">'+e.religion+'</option>';
+        });
+        $('#religion').html(rhtml);
+        /*Religion*/
+
+
+        /*Category*/
+        let categoryData = getCategory();
+        let chtml = '';
+        chtml += '<option value="0">Select Option</option>';
+        $.each(categoryData, function(i,e) {
+          chtml += '<option value="'+e.id+'">'+e.category+'</option>';
+        });
+        $('#reservation').html(chtml);
+        /*Category*/
+      });
+        jQuery(document).on('click','.next', function(){
+ 
+            var page_index = $(this).attr("data-indexid");
+            if(validateInputs(page_index) == 0) {
+                let box_class = 'box' + page_index; //box1
+                $('.' + box_class).css('display','none'); //.box1
+                let next_page_index = parseInt(page_index) + 1;
+                let next_box_class = 'box' + next_page_index; //box2
+                $('.' + next_box_class).css('display','block');
+                activateBreadcrumb(next_page_index);
+                localStorage.setItem('current_page_index',next_page_index);
+            } else {
+                alert('Fill the form');
+            }
+           
+
+        });
+        jQuery(document).on('click','.prev', function(){
+ 
+ var page_index = $(this).attr("data-indexid");
+ 
+     let box_class = 'box' + page_index; //box1
+     $('.' + box_class).css('display','none'); //.box1
+     let next_page_index = parseInt(page_index) - 1;
+     let next_box_class = 'box' + next_page_index; //box2
+     $('.' + next_box_class).css('display','block');
+ 
+
+
+});
+        function validateInputs(pageIndex) {
+            let box_name = 'box' + pageIndex;
+            let page_data = $('.' + box_name);
+            let validation_flag = 0;
+            // console.log(page_data);
+            $('.' + box_name).find('input').each(function(i, e){
+               if(e.hasAttribute('required')) {
+                if(e.value == undefined || e.value == null || e.value == '') {
+                   
+                   validation_flag = 1;
+                   
+                }
+               }
+            });
+            $('.' + box_name).find('select').each(function(i, e){
+                if(e.hasAttribute('required')) {
+                if(e.value == undefined || e.value == null || e.value == '') {
+                   
+                   validation_flag = 1;
+                   
+                }
+               }
+            });
+            return validation_flag;
+        }
+
+  function address_check(f)  
+  {
+
+   if(f.checkaddress.checked == true) 
+   {
+
+    f.p_house.value = f.c_house.value;
+
+    f.p_city.value = f.c_city.value;
+	
+	  f.p_postoff.value = f.c_postoff.value;
+
+    f.p_district.value = f.c_district.value;
+	
+	  f.p_state.value = f.c_state.value;
+
+    f.p_zipcode.value = f.c_zipcode.value;
+
+   }
+  }
+
+
+  var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+
+
+
+
+
+function loadApi() {
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach((movie) => {
+      console.log(movie.title)
+    })
+  } else {
+    console.log('error')
+  }
+}
+}
+
+// request.send()
+
+
+/*Photo of candidate */
+jQuery(document).on('change', '.file', function(){
+  let fileInput = $(this);
+  let id = $(this).attr('id');
+  let fileExtension = ['jpg', 'jpeg', 'png'];
+  if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+    alert("Only formats are allowed : "+fileExtension.join(', '));
+    $(this).val('');
+  } else {
+
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput[0].files[0]);
+    reader.onload = function(e) {
+      // let imagehtml = '<img src="'+reader.result+'"/>';
+     if(id == 'file_candidate_photo') {
+      $('#photo_preview').attr('src', reader.result);
+     } else {
+      $('#signature_preview').attr('src', reader.result);
+     }
+    }
+  }
+  console.log(fileInput);
+});
+  $(document).on('change', '#religion', function(){
+    let religion_id = $(this).val();
+    let casteData = getCaste(religion_id);
+    let castehtml = '';
+    castehtml += '<option value="0">Select Option</option>';
+    $.each(casteData, function(i,e) {
+      castehtml += '<option value="'+e.id+'">'+e.caste+'</option>';
+    });
+    $('#caste').html(castehtml);
+    
+  });
+
+  function myFunction1() {
+  var checkBox = document.getElementById("quota1");
+  var text = document.getElementById("file");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+
+function myFunction2() {
+  var checkBox = document.getElementById("quota2");
+  var text = document.getElementById("file");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+
+function myFunction4() {
+  var checkBox = document.getElementById("quota4");
+  var text = document.getElementById("file");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+
+    </script>
+      
+    </html>

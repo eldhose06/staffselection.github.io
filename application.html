@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <!-- <script src="bootstrap.min.js"></script>  -->
+  <script src="js/mock_api.js"></script>
+  <title> </title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url("imgbg.png");
+      padding: 150px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Add padding to forms */
+    .form {
+      padding: 20px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=password],
+    select {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    #submitbtn {
+      margin: 8px 0;
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+  </style>
+  <script>
+    var data = sessionStorage.getItem("id");
+    console.log("data");
+    console.log(data);
+    document.getElementById('id').value = data;
+  </script>
+</head>
+
+<body>
+
+  <img src="logo.jpg" class="center" alt="Mar Athanasius College Association">
+  <div class="form">
+    <form action="http://localhost:8000/user/applicantInfo/" method="POST" enctype="multipart/form-data"></form>
+    <input id="id" type="text" name="id" required />
+    <fieldset>
+      <legend>
+        <p>
+        <h3> Job Details</h3>
+        </p>
+      </legend>
+
+      <div class="item">
+        <label>Institute</label><br>
+        <select name="institute" id="institute">
+          <option selected value="" disabled selected>- Select Institute -</option>
+
+        </select>
+      </div>
+
+      <div class="item">
+        <label>Post Applied for</label><br>
+        <select name="post" id="post">
+          <option selected value="" disabled selected>- Select the Post You Want to Apply for -</option>
+
+        </select>
+      </div>
+      <div class="item">
+        <label for="sslcinstitution">Enter X institution&nbsp;<span>*</span></label>
+        <input id="sslcinstitution" type="text" name="sslcinstitution" required />
+      </div>
+      <div class="item">
+        <label for="sslcyop">Enter X year of passing&nbsp;<span>*</span></label>
+        <input id="sslcyop" type="text" name="sslcyop" required />
+      </div>
+      <div class="item">
+        <label for="sslcpercentage">Enter X percentage&nbsp;<span>*</span></label>
+        <input id="sslcpercentage" type="text" name="sslcpercentage" required />
+      </div>
+      <div class="item">
+        <label for="plustwoinstitute">Enter XII institution&nbsp;<span>*</span></label>
+        <input id="plustwoinstitute" type="text" name="plustwoinstitute" required />
+      </div>
+      <div class="item">
+        <label for="plustwoyop">Enter XII year of passing&nbsp;<span>*</span></label>
+        <input id="plustwoyop" type="text" name="plustwoyop" required />
+      </div>
+      <div class="item">
+        <label for="plustwopercentage">Enter XII percentage&nbsp;<span>*</span></label>
+        <input id="plustwopercentage" type="text" name="plustwopercentage" required />
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <p>
+        <h3>Personal Details</h3>
+        </p>
+      </legend>
+
+      <div class="itemreq">
+        <label><b align="right"></b><span>* required</span></label>
+      </div>
+      <!--           
+              <div class="item">
+                <label for="email">Email ID&nbsp;<span>*</span></label>
+                <input id="email" type="email" name="email" />
+              </div>
+    
+              <div class="item">
+                <label for="phone">Phone NO&nbsp;<span>*</span></label>
+                <input id="phone" type="tel"  maxlength="10"  name="phone" />
+              </div> -->
+
+      <div class="item">
+        <label for="aadhar">Aadhaar NO&nbsp;<span>*</span></label>
+        <input id="aadhar" type="number" maxlength="12" name="aadhar" />
+      </div>
+
+      <div class="item">
+        <label>Nationality&nbsp;<span>*</span></label>
+        <select name="nationality" id="nationality" required>
+
+        </select>
+      </div>
+
+
+      <div class="item">
+        <label>Religion&nbsp;<span>*</span></label>
+        <select name="religion" id="religion" required>
+
+        </select>
+      </div>
+
+      <div class="item">
+        <label>Caste&nbsp;<span>*</span></label>
+        <select name="caste" id="caste" required>
+          <option selected value="" disabled selected>- Choose Religion first -</option>
+        </select>
+      </div>
+
+      <div class="item">
+        <label>Blood Group</label>
+        <select name="blood" id="blood">
+          <option selected value="" disabled selected>- Select Group -</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+        </select>
+      </div>
+
+
+      <div class="question">
+        <label for="handicapped">Whether Physically Handicapped ?&nbsp;<span>*</span></label>
+
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="Yes" id="radio_1" name="handicapped" />
+            <label for="radio_1" class="radio"><span>Yes</span></label>
+            <input type="radio" value="No" id="radio_2" name="handicapped" />
+            <label for="radio_2" class="radio"><span>No</span></label>
+          </div>
+        </div>
+      </div>
+
+
+
+    </fieldset>
+
+
+    <fieldset>
+      <legend>
+        <p>
+        <h3>Address</h3>
+        </p>
+      </legend>
+
+      <div>
+        <h4> Home Address</h4>
+      </div>
+
+
+      <div class="colums">
+
+
+        <div class="item">
+          <label for="caddress1">House Name / No&nbsp;<span>*</span></label>
+          <input id="caddress1" type="text" name="c_house" required />
+        </div>
+
+        <div class="item">
+          <label for="caddress2">Locality / City&nbsp;<span>*</span></label>
+          <input id="caddress2" type="text" name="c_city" required />
+        </div>
+
+        <div class="item">
+          <label for="caddress3">Post Office&nbsp;<span>*</span></label>
+          <input id="caddress3" type="text" name="c_postoff" required />
+        </div>
+
+        <div class="item">
+          <label for="caddress4">District&nbsp;<span>*</span></label>
+          <input id="caddress4" type="text" name="c_district" required />
+        </div>
+
+        <div class="item">
+          <label for="caddress5">State&nbsp;<span>*</span></label>
+          <input id="caddress5" type="text" name="c_state" required />
+        </div>
+
+        <div class="item">
+          <label for="caddress6">Pin Code&nbsp;<span>*</span></label>
+          <input id="caddress6" type="text" name="c_pincode" required />
+        </div>
+      </div>
+
+      <br>
+      <label for="cv">Upload CV In Pdf&nbsp;<span>*</span></label>
+      <input type="file" id="myFile" name="cv" accept=".doc, .docx, .pdf, .txt">
+    
+    </fieldset>
+
+
+
+
+
+    <div class="btn-block">
+      <button type="button" id="submitbtn" class="next next-button-box1"
+        data-indexid="1">Submit</button>
+         <!-- onclick="send_data()" -->
+    </div>
+
+
+  </div>
+  </form>
+  </div>
+</body>
+<script>
+  var handicappedval;
+  $(document).ready(function () {
+    $('button').click(function () {
+      var value = $("input[type=radio][name=handicapped]:checked").val();
+      console.log("value : " + value);
+      if (value) {
+        handicappedval = value;
+        console.log(handicappedval);
+      }
+      else {
+        alert('Nothing is selected');
+      }
+    })
+  });
+
+
+
+  function test(t) {      //defining a function
+    if (t === undefined) {       //if t=undefined, call tt
+      console.log(t)      //call t
+    }
+    return t;
+  }
+
+
+  function send_data() {
+    var data = sessionStorage.getItem("id");
+    console.log("session" + data);
+    var id = sessionStorage.getItem("id");
+    console.log("id." + id);
+
+    var institute = document.getElementById("institute").value;
+    var post = document.getElementById("post").value;
+    var sslcinstitution = document.getElementById("sslcinstitution").value;
+    var sslcyop = document.getElementById("sslcyop").value;
+    var sslcpercentage = document.getElementById("sslcpercentage").value;
+    var plustwoinstitute = document.getElementById("plustwoinstitute").value;
+    var plustwoyop = document.getElementById("plustwoyop").value;
+    var plustwopercentage = document.getElementById("plustwopercentage").value;
+
+    var aadhar = document.getElementById("aadhar").value;
+    var nationality = document.getElementById("nationality").value;
+    var religion = document.getElementById("religion").value;
+    var caste = document.getElementById("caste").value;
+    var blood = document.getElementById("blood").value;
+    var value = $("input[type=radio][name=handicapped]:checked").val();
+    console.log("value : " + value);
+    if (value) {
+      handicappedval = value;
+      console.log(handicappedval);
+    }
+    else {
+      alert('Nothing is selected');
+    }
+    var handicapped = handicappedval;
+    console.log(handicappedval);
+    var c_house = document.getElementById("caddress1").value;
+    var c_city = document.getElementById("caddress2").value;
+    var c_postoffice = document.getElementById("caddress3").value;
+    var c_district = document.getElementById("caddress4").value;
+    var c_state = document.getElementById("caddress5").value;
+    var c_pincode = document.getElementById("caddress6").value;
+
+
+
+
+    console.log("1." + institute, "2" + post, "3" + sslcinstitution, "4" + sslcyop, "5." + sslcpercentage, "6." + plustwoinstitute, "7." + plustwoyop, "8." + plustwopercentage, "9." + blood, "10." + religion, "11." + caste, "12." + handicapped, "13." + aadhar, "14." + nationality, "15." + c_house, "16." + c_city, "17." + c_district, "18." + c_postoffice, "19." + c_state, "20." + c_pincode)
+
+    // var fname=document.getElementById("fname").value;
+    // var mname=document.getElementById("mname").value;
+
+    // var file_candidate_photo=document.getElementById("file_candidate_photo").value;
+    // var file_candidate_signature=document.getElementById("file_candidate_signature").value;
+
+    var httpr = new XMLHttpRequest();
+
+    // httpr.open("POST","https://eldhose06.pythonanywhere.com/user/register/",true);
+
+    httpr.open("POST", "http://localhost:8000/user/applicantInfo/", true);
+    httpr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    httpr.onreadystatechange = function () {
+      if (httpr.readyState == 4 && httpr.status == 200) {
+        //Runs when the request is successful
+        console.log(httpr.responseText);
+        console.log(httpr.responseText);
+        alert("profile updated");
+      } else {
+            console.log("error");
+        
+      }
+    }
+    // httpr.send("id="+id,"institute="+institute+"&post="+post)
+    httpr.send("id=" + id + "&institute=" + institute + "&post=" + post + "&sslcInstitution=" + sslcinstitution + "&sslc_year_of_study=" + sslcyop + "&sslcpercentage=" + sslcpercentage + "&plustwoInstitution=" + plustwoinstitute + "&plustwo_year_of_study=" + plustwoyop + "&plustwopercentage=" + plustwopercentage + "&aadhar=" + aadhar + "&nationality=" + nationality + "&religion=" + religion + "&caste=" + caste + "&bloodGroup=" + blood + "&handicapped=" + handicapped + "&c_house_name=" + c_house + "&c_city=" + c_city + "&c_postoffice=" + c_postoffice + "&c_district=" + c_district + "&c_state=" + c_state + "&c_pincode=" + c_pincode);
+
+  }
+
+
+  $(document).ready(function () {
+
+    // var id = sessionStorage.getItem("id");
+    // console.log(id);
+    // getUsers(id).then((data) => {
+    //   let userData = data;
+    //   console.log(data);
+      
+    // })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
+    /*Institute*/
+
+    let instituteData;
+    getInstitute().then((data) => {
+      let instituteData = data;
+      console.log(instituteData);
+      let rhtml = '';
+      rhtml += '<option value="0">Select Option</option>';
+      $.each(JSON.parse(instituteData), function (i, e) {
+        rhtml += '<option value="' + e.id + '">' + e.instituteName + '</option>';
+      });
+      $('#institute').html(rhtml);
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+    /*Institute*/
+
+
+    /*Nationality*/
+    let nationalityData;
+    getNationality().then((data) => {
+      let nationalityData = data;
+      let nhtml = '';
+      nhtml += '<option value="0">Select Option</option>';
+      $.each(JSON.parse(nationalityData), function (i, e) {
+        nhtml += '<option value="' + e.id + '">' + e.nationality + '</option>';
+      });
+      $('#nationality').html(nhtml);
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+    /*Nationality*/
+
+    /*Religion*/
+
+    let religionData;
+    getReligions().then((data) => {
+      let religionData = data;
+      console.log(religionData);
+      let rhtml = '';
+      rhtml += '<option value="0">Select Option</option>';
+      $.each(JSON.parse(religionData), function (i, e) {
+        rhtml += '<option value="' + e.id + '">' + e.religion + '</option>';
+      });
+      $('#religion').html(rhtml);
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+    /*Religion*/
+
+  });
+
+  //caste
+  $(document).on('change', '#religion', function () {
+    let religion_id = $(this).val();
+    console.log(religion_id);
+    getCaste(religion_id).then((data) => {
+      let casteData = data;
+      console.log(data);
+      //console.log("home" + casteData);
+      let castehtml = '';
+      castehtml += '<option value="0">Select Option</option>';
+      $.each(casteData, function (i, e) {
+
+        castehtml += '<option value="' + e + '">' + e + '</option>';
+      });
+      $('#caste').html(castehtml);
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+  });
+
+
+
+
+  //post
+  $(document).on('change', '#institute', function () {
+    let institute_id = $(this).val();
+    console.log(institute_id);
+    getPost(institute_id).then((data) => {
+      let postData = data;
+      // console.log(data);
+      //console.log("home" + casteData);
+      let posthtml = '';
+      posthtml += '<option value="0">Select Option</option>';
+      $.each(postData, function (i, e) {
+
+        posthtml += '<option value="' + e + '">' + e + '</option>';
+      });
+      $('#post').html(posthtml);
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+  });
+
+</script>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url("imgbg.png");
+      padding: 150px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Add padding to containers */
+    .container {
+      padding: 20px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+
+    #submitbtn {
+      margin: 8px 0;
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="logo.jpg" class="center" alt="Mar Athanasius College Association">
+  <form>
+    <div class="container">
+
+      <h1 style="text-align:center;">LOGIN</h1>
+
+      <hr>
+
+      <label for="name"><b>Email</b></label>
+      <input type="text" placeholder="Enter your Email" name="email" id="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter your Password" name="psw" id="psw" required>
+
+      <!-- Button to send data -->
+      <!-- <button onclick="sendJSON()" class="registerbtn" >LOGIN</button> -->
+      <input type="button" value="Login" id="submitbtn" onclick="send_data()"></input>
+      <div class="form signin">
+        <p>Not Registered? <a href="registration.html">Create an Account</a></p>
+      </div>
+    </div>
+    
+  </form>
+  <script>
+    function send_data() {
+      myStorage = window.sessionStorage;
+      var email = document.getElementById("email").value;
+      var psw = document.getElementById("psw").value;
+      var httpr = new XMLHttpRequest();
+      try {
+        httpr.open("POST", "http://localhost:8000/user/login/", true);
+        httpr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        console.log('READYSTATE:', httpr.readyState);
+        httpr.onreadystatechange = function () {
+          console.log("dat");
+          console.log('READYSTATE:', httpr.readyState);
+          console.log(httpr.status);
+          console.log("data");
+         
+            if (httpr.readyState == 4) {
+              if (httpr.status == 200) {
+                //Runs when the request is successful
+                console.log("success");
+                alert("Login Successful");
+                console.log(httpr.responseText);
+
+                var jsondata = httpr.responseText;
+
+                const obj = JSON.parse(jsondata);
+                console.log(obj.id);
+                sessionStorage.setItem("id", obj.id);
+                var data = sessionStorage.getItem("id");
+                console.log(data);
+                //  location.href = "application.html";
+                // window.location.href = "application.html";
+              } else {
+                // Runs when it's not
+                console.log("error");
+                alert("Login Failed");
+                // console.log(httpr.responseText);
+              }
+            }
+
+          
+        }
+        httpr.send("email=" + email + "&password=" + psw);
+      } catch (error) {
+        console.log(error);
+        
+      }
+      // httpr.open("POST","https://eldhose06.pythonanywhere.com/user/login/",true);
+
+
+
+
+
+
+      // let result = document.querySelector('.result');
+      // let name = document.querySelector('#name');
+      // let password = document.querySelector('#psw');
+
+      // // Creating a XHR object
+      // let xhr = new XMLHttpRequest();
+      // let url = "http://localhost:8000/user/login/";
+
+      // // open a connection
+      // xhr.open("POST", url, true);
+
+      // // Set the request header i.e. which type of content you are sending
+      // xhr.setRequestHeader("Content-Type", "application/json");
+
+      // // Create a state change callback
+      // xhr.onreadystatechange = function () {
+      //     if (xhr.readyState === 4 && xhr.status === 200) {
+
+      //         // Print received data from server
+      //         result.innerHTML = this.responseText;
+
+      //     }
+      // };
+
+      // // Converting JSON data to string
+      // var data = JSON.stringify({ "name": name.value, "password": psw.value });
+
+      // // Sending data with the request
+      // xhr.send(data);
+    }
+
+  </script>
+
+</body>
+
+</html>

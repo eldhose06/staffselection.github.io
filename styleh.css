@@ -1,0 +1,164 @@
+body {
+    /* text-align: center; */
+}
+h1{
+    color: green;
+}
+  
+.addressLink {
+    list-style: none;
+    overflow: hidden;
+    font: 16px;
+    margin: 30px;
+    padding: 0px;
+    border: 4px solid black;
+    font-style: italic;
+}
+  
+.addressLink li {
+    float: left;
+}
+  
+.addressLink li a {
+    background: #666;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0px 5px 65px;
+    position: relative;
+    float: left;
+}
+  
+.addressLink li a:after {
+    content: " ";
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid #666;
+    margin-top: -50px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: 2;
+}
+  
+.addressLink li a:before {
+    content: " ";
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: 1;
+}
+  
+.addressLink li:first-child a {
+    padding-left: 10px;
+}
+  
+.addressLink li:nth-child(2) a {
+    background: #666;
+}
+  
+.addressLink li:nth-child(2) a:after {
+    border-left-color: #009933;
+}
+  
+.addressLink li:nth-child(3) a {
+    background: #666;
+}
+  
+.addressLink li:nth-child(3) a:after {
+    border-left-color: #33cc33;
+}
+  
+  
+.addressLink li:last-child a {
+    background: transparent !important;
+    color: black;
+}
+  
+.addressLink li:last-child a:after {
+    border: 0;
+}
+  
+.addressLink li a:hover {
+    background: #99ff99;
+}
+  
+.addressLink li a:hover:after {
+    border-left-color: #99ff99 !important;
+}
+.breadbutton {
+    width: 489px;
+}
+
+
+/*checkbox*/
+
+/* The container */
+.containercheck {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .containercheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containercheck:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .containercheck input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .containercheck input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containercheck .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
